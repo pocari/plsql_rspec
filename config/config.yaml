@@ -1,0 +1,7 @@
+db:
+  development:
+    adapter:  oracle_enhanced
+    host:     XXXXXXXX
+    username: XXXXXXXX
+    password: XXXXXXXX
+    database: XXXXXXXX
