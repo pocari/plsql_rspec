@@ -8,12 +8,7 @@ class ConfigHelper
   
   def [](keys)
     keys.inject(nil) do |acc, key|
-      if acc
-        acc = acc[key.to_s]
-      else
-        acc = @config[key.to_s]
-      end
-      acc
+      (acc || @config)[key.to_s]
     end
   end
   
