@@ -1,8 +1,10 @@
 #coding: Windows-31J
 
+require 'active_support/all'
 require 'ruby-plsql'
-require_relative 'active_record_helper.rb'
-require_relative 'models.rb'
+require_relative 'active_record_helper'
+require_relative 'models'
+require_relative 'config_helper'
 
 ActiveSupport::LogSubscriber.colorize_logging = false
 #ActiveRecord::Base.logger = Logger.new(STDOUT) #ログ表示する場合は有効にする
