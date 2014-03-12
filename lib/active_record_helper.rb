@@ -3,17 +3,11 @@ require 'active_record'
 class TransactionHelper
   def initialize(config)
     @config = config
-  end
-  
-  def with_connection
     ActiveRecord::Base.establish_connection(@config)
-    yield
-  ensure
-    ActiveRecord::Base.connection.close
   end
   
   def with_transaction
-    with_connection do
+     ActiveRecord::Base.connection_pool.with_connection do
       ActiveRecord::Base.transaction do
         yield
       end
